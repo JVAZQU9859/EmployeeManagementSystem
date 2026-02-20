@@ -1,20 +1,23 @@
+import java.util.ArrayList;
+
 public class Main {
     
     public static void main(String[] args) {
 
-        Employee emp1 = new Manager("David", 80000, 10000);
-        Employee emp2 = new Developer("Jesus", 70000);
-        Employee emp3 = new Employee("Giovani");
+        // Generic ArrayList to store Employees
+        ArrayList<Employee> employees = new ArrayList<>();
 
-        System.out.println("---- Employee Information ----");
-        System.out.println();
+        // Add different types of employees
+        employees.add(new Manager("David", 80000, 10000));
+        employees.add(new Developer("Jesus", 70000));
+        employees.add(new Employee("Giovani"));
 
-        emp1.displayInfo();
-        System.out.println();
+        System.out.println("---- Employee Information ----\n");
 
-        emp2.displayInfo();
-        System.out.println();
-
-        emp3.displayInfo();
+        // Loop through list 
+        for (Employee emp : employees) {
+            emp.displayInfo();
+            System.out.println();
+        }  
     }
 }
