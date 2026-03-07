@@ -19,6 +19,7 @@ public class Main {
         System.out.println("2. Add Developer");
         System.out.println("3. View Employees");
         System.out.println("4. Exit");
+        System.out.println("5. View Total Payroll");
 
         int choice;
 
@@ -97,6 +98,16 @@ public class Main {
 
             default:
                 System.out.println("Invalid choice. Try again.");
+
+            case 5:
+                double totalPayroll = 0;
+
+                for (Employee emp : employees) {
+                    totalPayroll += emp.calculatePay();
+                }
+
+                System.out.println("\nTotal Payroll: $" + totalPayroll);
+                break;
         }
        }     
        
